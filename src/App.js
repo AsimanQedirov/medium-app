@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './assets/css/bootstrap.css'
+import './assets/css/style.css';
+import Sidebar from "./components/main/Sidebar";
+import Content from "./components/main/Content";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    state = {
+        tab: false
+    }
+    moveSideBar = () => {
+        this.setState({
+            tab: !this.state.tab
+        })
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Sidebar menu={this.state.tab}/>
+                <Content menu={this.moveSideBar}/>
+            </div>
+        );
+    }
 }
 
 export default App;

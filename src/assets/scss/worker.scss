@@ -1,0 +1,92 @@
+.App {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: stretch;
+  height: 100vh;
+  padding: 15px;
+  background-color: $app-color;
+
+  .extend-class {
+    background-color: $app-color;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: $content-padding;
+    margin: $content-margin;
+    display: flex;
+    flex-direction: column;
+    .navbar{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .link-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        .icon{
+        }
+        .text{
+          font-size: 12px;
+        }
+      }
+      a{
+        color: white;
+        width: 100%;
+        margin: 10px 0px;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      .active{
+        color: #758791e0;
+      }
+    }
+  }
+
+  .sidebar {
+    max-width: $sidebar-width;
+    min-width: $sidebar-width;
+    opacity: 1;
+    transform: scale(1);
+    @extend .extend-class
+  }
+
+  .content {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: $content-padding;
+    background-color: $background-color;
+    border-radius: $border-radius 3px 3px $border-radius;
+   .right-content{
+     background-color: $background-color;
+     .react-calendar{
+       border-radius: 13px;
+       border: none;
+       .react-calendar__viewContainer{
+         button{
+           color: #1d2124;
+           font-size: 11px;
+         }
+       }
+     }
+   }
+  }
+
+  .isOpen {
+    max-width: 0px;
+    min-width: 0px;
+    opacity: 0;
+    transform: scale(0.95);
+    @extend .extend-class
+  }
+
+  .menu {
+    margin: 10px;
+    @include button(4px 7px 0px)
+  }
+}
+

@@ -1,0 +1,92 @@
+::-webkit-scrollbar {
+  width: 6px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #220834;
+  border-radius: 10px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #541e79; }
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato"), url("../fonts/Lato/Lato-Regular.ttf") format("truetype"); }
+body {
+  padding: 0px !important;
+  margin: 0px !important;
+  box-sizing: border-box;
+  background-color: #edf1f4;
+  font-family: Lato; }
+
+.App {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: stretch;
+  height: 100vh;
+  padding: 15px;
+  background-color: #061b26; }
+  .App .extend-class, .App .sidebar, .App .isOpen {
+    background-color: #061b26;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; }
+    .App .extend-class .navbar, .App .sidebar .navbar, .App .isOpen .navbar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .App .extend-class .navbar .link-div, .App .sidebar .navbar .link-div, .App .isOpen .navbar .link-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none; }
+        .App .extend-class .navbar .link-div .text, .App .sidebar .navbar .link-div .text, .App .isOpen .navbar .link-div .text {
+          font-size: 12px; }
+      .App .extend-class .navbar a, .App .sidebar .navbar a, .App .isOpen .navbar a {
+        color: white;
+        width: 100%;
+        margin: 10px 0px; }
+        .App .extend-class .navbar a:hover, .App .sidebar .navbar a:hover, .App .isOpen .navbar a:hover {
+          text-decoration: none; }
+      .App .extend-class .navbar .active, .App .sidebar .navbar .active, .App .isOpen .navbar .active {
+        color: #758791e0; }
+  .App .sidebar {
+    max-width: 130px;
+    min-width: 130px;
+    opacity: 1;
+    transform: scale(1); }
+  .App .content {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    background-color: #edf1f4;
+    border-radius: 20px 3px 3px 20px; }
+    .App .content .right-content {
+      background-color: #edf1f4; }
+      .App .content .right-content .react-calendar {
+        border-radius: 13px;
+        border: none; }
+        .App .content .right-content .react-calendar .react-calendar__viewContainer button {
+          color: #1d2124;
+          font-size: 11px; }
+  .App .isOpen {
+    max-width: 0px;
+    min-width: 0px;
+    opacity: 0;
+    transform: scale(0.95); }
+  .App .menu {
+    margin: 10px;
+    padding: 4px 7px 0px;
+    cursor: pointer;
+    border: 1px solid #061b26;
+    border-radius: 3px; }
+    .App .menu svg {
+      font-size: 1.8rem; }

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url("../fonts/Lato/Lato-Regular.ttf")  format('truetype');
+}
+body{
+  padding: 0px !important;
+  margin: 0px !important;
+  box-sizing: border-box;
+  background-color: $background-color;
+  font-family: Lato;
+}
+@mixin button($padding){
+  padding: $padding;
+  cursor: pointer;
+  border: 1px solid $app-color;
+  border-radius: 3px;
+    svg{
+      font-size: 1.8rem;
+    }
+}
